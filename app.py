@@ -1,9 +1,10 @@
 """
 Intelligent Procurement Assistant - RAG + SQLite + NiceGUI
-One-file deployment ready for Railway / PythonAnywhere
+Ready for Railway deployment (uses PORT env variable)
 """
 
 import sqlite3
+import os
 from nicegui import ui
 
 # ============================================
@@ -212,7 +213,8 @@ with ui.tab_panels(tabs, value=chat_tab):
             ui.button('WRONG-999 + IT', on_click=lambda: (cc_input.set_value('WRONG-999'), dept_input.set_value('IT'), validate())).props('size=sm')
 
 # ============================================
-# RUN
+# RUN - Railway uses PORT environment variable
 # ============================================
 
-ui.run(port=8085, title='Procurement Assistant')
+    port = int(os.environ.get('PORT', 8085))
+    ui.run(host='0.0.0.0', port=port, title='Procurement Assistant', reload=False)
