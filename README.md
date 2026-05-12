@@ -5,7 +5,7 @@
 **RAG + Business Rules + SQLite** — Ask me anything about procurement.
 
 ## Live Demo
-> Hosted on Railway: 
+> Hosted on Railway: https://demo-procurement-intelligent-rag-assistant-erp-production.up.railway.app/
 
 ## What it does
 - Answers procurement questions (owners, channels, approvals, workflows)
